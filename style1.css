@@ -1,0 +1,45 @@
+.container {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 15%;
+}
+
+h1 {
+    font-size: 40px;
+   
+}
+
+h2 {
+    font-size: 20px;
+ 
+}
+
+button {
+    margin: 10px;
+   
+}
+
+.color {
+    color: rgba(7, 108, 148, 0.902);
+}
+
+input {}
+
+
+    body {
+        background: url('images/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg') no-repeat center center fixed;
+        background-size: cover;
+        background-color: black;
+       
+    }
+
+#logo{
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px;
+
+}
+#map {
+    height: 100%;
+  }
