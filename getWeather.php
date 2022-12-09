@@ -5,7 +5,7 @@ $city = '';
 $weather ='Sun and rain are equally necessary to ripen grapes and talent.
 Friedrich Nietzsche';
 $error ='';
-
+$_SESSION['city'] = '';
 
 
 if (!empty($_GET['city'])) {
@@ -21,14 +21,29 @@ if (!empty($_GET['city'])) {
    $tempMax =intval($weatherArray['main']['temp_max']-273);
    $umidity =$weatherArray['main']['humidity'];
    //Per recuperare il valore si va a inserire l'indice dell'array dove si trova la variabile [weather], ecc
-   $weather = 'The weather in '.$_GET['city']." now is ".$weatherArray['weather'][0]['description'].", the temperature is ".$tempCelsius."&deg;C with a minim of ".$tempMin."&deg;C and a maxim of ".$tempMax."&deg;C. Humidity ". $umidity."%";
- } else {
-    $weather ='';
-    $error = 'No data found';
- }
+   $weather = ucfirst($_GET['city']).'<br>'.$weatherArray['weather'][0]['main']."<br>".$tempCelsius."&deg;C <br> Minim of ".$tempMin."&deg;C  Maxim ".$tempMax."&deg;C<br> Humidity ". $umidity."%";
   
+   if($weatherArray['weather'][0]['main']=='Clouds') {
+    $_SESSION['city'] = 'clouds';
+  } else if ($weatherArray['weather'][0]['main']=='Clear') {
+  $_SESSION['city'] = 'clear';
+  } else if ($weatherArray['weather'][0]['main']=='Fog') {
+  $_SESSION['city'] = 'fog';
+  } else if ($weatherArray['weather'][0]['main']=='Snow') {
+    $_SESSION['city'] = 'snow';
+  } else if ($weatherArray['weather'][0]['main']=='Mist') {
+    $_SESSION['city'] = 'mist';
+  } else if ($weatherArray['weather'][0]['main']=='Rain') {
+    $_SESSION['city'] = 'rain';
+  } 
+}
 } else {
     $weather ='';
     $error = 'No data found';
 }
+
+
+
+
+
 }
