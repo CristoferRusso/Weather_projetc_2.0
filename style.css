@@ -1,0 +1,47 @@
+.container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+h1 {
+    font-size: 40px;
+   
+}
+
+h2 {
+    font-size: 20px;
+ 
+}
+
+button {
+    margin: 10px;
+   
+}
+
+.color {
+    color: rgba(21, 127, 169, 0.902);
+}
+
+
+
+   body {
+        background: url('images/giphy.gif') no-repeat center center fixed;
+        background-size: cover;
+        background-color: black;
+        width: auto;
+       
+    } 
+
+
+#logo{
+    width: 100px ;
+    border-radius: 50%;
+    margin: 10px;
+
+}
+#map {
+    height: 100%;
+  }
+

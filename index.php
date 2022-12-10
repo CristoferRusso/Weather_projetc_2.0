@@ -13,10 +13,11 @@ require 'getWeather.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's The Weather?</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body id>
+<body >
+    
     
     <img src="images/sample-logo-design-png-3-2.png" id="logo">
     <div class="container">
@@ -35,7 +36,7 @@ require 'getWeather.php';
                 $class = $weather ? '' : 'danger'
                 
                 ?>
-                <div style="color: rgba(251, 251, 251, 0.702);" id='result' class="alert alert-<?= $class ?>">
+                <div style="color: rgba(251, 251, 251, 0.702); margin-bottom:20%;" id='result' class="alert alert-<?= $class ?>">
                     <!-- Se c'è un valore dentro alla variabile wheather stampa weather altrimenti stampa il messagio di error  -->
                     <h3><?= $weather ? $weather : $error; ?> </h3>
                      <?php  
@@ -53,6 +54,8 @@ require 'getWeather.php';
                         case 'mist':?>  <img src="images/cloudy.png" style="width: 60%; margin:auto;"><?php 
                             break;
                         case 'rain':?>  <img src="images/rain.png" style="width: 60%; margin:auto;"><?php 
+                            break;
+                        case 'drizzle':?>  <img src="images/drizzle.png" style="width: 60%; margin:auto;"><?php 
                         
                         
                         
@@ -63,8 +66,13 @@ require 'getWeather.php';
                    
                 </div>
             </form>
-            <h2><div class="container" style='padding-top:30%; width: auto;'>With API from OpenWeatherMap <br>Weather icons created by iconixar - Flaticon <br><a href="https://www.flaticon.com/free-icons/weather"></a></div></h2>
-
+            <footer class="footer mt-auto py-1 bg-dark fixed-bottom" style="margin-top:10%; width: 100%">
+                 <div style>
+                 <span class="text-muted">
+                 With API from OpenWeatherMap <br>Weather icons created by iconixar - Flaticon <br><a href="https://www.flaticon.com/free-icons/weather">
+                 </span>
+                </div>
+           </footer>
         </form>
     </div>
     <div id="map"></div>

@@ -35,6 +35,8 @@ if (!empty($_GET['city'])) {
     $_SESSION['city'] = 'mist';
   } else if ($weatherArray['weather'][0]['main']=='Rain') {
     $_SESSION['city'] = 'rain';
+  } else if ($weatherArray['weather'][0]['main']=='Drizzle') {
+    $_SESSION['city'] = 'drizzle';
   } 
 }
 } else {
